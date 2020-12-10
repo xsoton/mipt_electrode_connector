@@ -65,16 +65,6 @@ module electrode_box(gap=0.2)
 		cube([w+gap, l+gap, h+gap]);
 }
 
-module piptik(d=1)
-{
-	difference()
-	{
-		sphere(d=d, $fn=100);
-		translate([-d/2, 0, -d/2])
-			cube([d,d,d]);
-	}
-}
-
 module box()
 {
     w = 12;
@@ -88,13 +78,7 @@ module box()
 		connector_box_extra();
 		pcb_box();
 		electrode_box();
-				
-		//translate([0,-1.2,-b_d-0.01])
-		//	cylinder(d=1.55, h=b_d+c_g+0.02,$fn=100);
 	}
-	
-	//translate([0,-0.05,c_g+7.9])
-	//	piptik(d=0.75);
 }
 
 box();
